@@ -3,6 +3,7 @@ import Pregunta from './components/Pregunta'
 import Formulario from './components/Formulario'
 import Listado from './components/Listado'
 import ControlPresupuesto from './components/ControlPresupuesto'
+import { Container, H1 } from './components/StyleComponents'
 
 function App() {
 
@@ -15,7 +16,6 @@ function App() {
   const [ crearGasto, guardarCrearGasto] = useState(false)
 
   // useEffect que actualiza el restante
-
   useEffect( () => {
     if(crearGasto){
 
@@ -26,22 +26,17 @@ function App() {
         ]);
 
         // Restar el presupuesto actual
-
         const presupuestoRestante = restante - gasto.cantidad;
         guardarRestante(presupuestoRestante);
-
-
 
         // Resetear a false
         guardarCrearGasto(false)
       }
     }, [gasto, crearGasto, gastos, restante])
 
-
   return (
-    <div className="container">
-      <header>
-        <h1>Gasto semanal</h1>
+    <Container>
+        <H1>Gasto semanal <span role="img" aria-label="Money">💷 💴 💶</span> </H1>
         <div className="contenido-principal contenido">
           { mostrarPregunta ? 
             (
@@ -70,11 +65,9 @@ function App() {
                 </div>
             </div>
             )}
-          
-
         </div>
-      </header>
-    </div>
+
+    </Container>
   );
 }
 

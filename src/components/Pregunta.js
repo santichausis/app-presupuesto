@@ -1,5 +1,6 @@
 import React, { Fragment, useState } from 'react'
 import Error from './Error'
+import { INPUT } from './StyleComponents'
 
 const Pregunta = ({ guardarPresupuesto, guardarRestante, actualizarPregunta }) => {
 
@@ -40,7 +41,7 @@ const Pregunta = ({ guardarPresupuesto, guardarRestante, actualizarPregunta }) =
             <form
                 onSubmit={agregarPresupuesto}
             >
-                <input
+                <INPUT
                     type="number"
                     className="u-full-width"
                     placeholder="Coloca tu presupuesto"

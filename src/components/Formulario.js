@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import Error from './Error'
 import shortid from 'shortid';
+import { INPUT } from './StyleComponents'
 
 const Formulario = ({guardarGasto, guardarCrearGasto }) => {
     //
@@ -44,7 +45,7 @@ const Formulario = ({guardarGasto, guardarCrearGasto }) => {
 
             <div className="campo">
                 <label>Cantidad Gasto</label>
-                <input 
+                <INPUT 
                     type="text"
                     className="u-full-width"
                     placeholder="Ej. Transporte"
